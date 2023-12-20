@@ -1,11 +1,11 @@
 import React from "react";
 
-function Sushi({sushi}) {
+function Sushi({sushi, handleEaten}) {
   return (
     <div className="sushi">
-      <div className="plate" onClick={/* Give me a callback! */ null}>
+      <div className="plate" onClick={()=>handleEaten(sushi)}>
         {/* Tell me if this sushi has been eaten! */}
-        {false ? null : (
+        {sushi.eaten ? null : (
           <img
             src={sushi.img_url}
             alt={sushi.name}
@@ -21,3 +21,5 @@ function Sushi({sushi}) {
 }
 
 export default Sushi;
+//onCLick that captures sushi id. take functio up to sushicaoniner.
+// filter out sushi from state and update state
